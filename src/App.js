@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {createContext, useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Child1 from "./components/Child1/Child1";
+import Child2 from "./components/Child2/Child2";
+
+let hello = "hello";
+export const SomeContext = createContext("default_context")
+const App = () => {
+    const [number, setNumber] = useState(null)
+
+    return (
+        <SomeContext.Provider value={{hello, number}}>
+            <div>
+                <Child1/>
+                <Child2 setNumber={setNumber}/>
+            </div>
+        </SomeContext.Provider>
+    );
 }
 
 export default App;
