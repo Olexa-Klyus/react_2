@@ -9,7 +9,7 @@ const App = () => {
     const [number, setNumber] = useState(null)
 
     return (
-        <SomeContext.Provider value={{hello, number}}>
+        <SomeContext.Provider value={{hello, number, setNumber}}>
             <div>
                 <Child1/>
                 <Child2 setNumber={setNumber}/>
