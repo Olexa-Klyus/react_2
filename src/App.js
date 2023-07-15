@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-        {users.map((user) => <Users user={user} key={user.id}/>)}
+        <Users users={users}/>
     </div>
   );
 }

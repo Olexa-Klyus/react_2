@@ -1,10 +1,10 @@
 import {User} from "./User/User";
 
-export const Users = ({user}) => {
+export const Users = ({users}) => {
 
     return (
         <div>
-            {<User user={user} key={user.id}/>}
+            {users.map((user) => <User user={user} key={user.id}/>)}
         </div>
     )
 };
