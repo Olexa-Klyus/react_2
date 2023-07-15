@@ -12,7 +12,7 @@ const App = () => {
         <SomeContext.Provider value={{hello, number, setNumber}}>
             <div>
                 <Child1/>
-                <Child2 setNumber={setNumber}/>
+                <Child2/>
             </div>
         </SomeContext.Provider>
     );

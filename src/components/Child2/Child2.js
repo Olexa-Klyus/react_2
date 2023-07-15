@@ -1,13 +1,13 @@
 import SubChild2_1 from "./SubChild2_1/SubChild2_1";
 import SubChild2_2 from "./SubChild2_2/SubChild2_2";
 
-const Child2 = ({setNumber}) => {
+const Child2 = () => {
 
     return (
         <div>
             <br/>
             <SubChild2_1/>
-            <SubChild2_2 setNumber={setNumber}/>
+            <SubChild2_2/>
         </div>
     );
 };
