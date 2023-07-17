@@ -34,43 +34,6 @@ const CreateUser = () => {
             console.log(event.target.value)
         }
 
-//     const postUser = async () => {
-//
-//         await fetch("https://jsonplaceholder.typicode.com/users", {
-//                 method: "POST",
-//                 body: JSON.stringify(
-//                     {
-//                         name: formValues.name,
-//                         username: formValues.username,
-//                         email: formValues.email,
-//                         address: {
-//                             street: formValues.street,
-//                             suite: formValues.suite,
-//                             city: formValues.city,
-//                             zipcode: formValues.zipcode,
-//                             geo: {
-//                                 lat: formValues.lat,
-//                                 lng: formValues.lng
-//                             }
-//                         },
-//                         phone: formValues.phone,
-//                         website: formValues.website,
-//                         company: {
-//                             name: formValues.companyName,
-//                             catchPhrase: formValues.catchPhrase,
-//                             bs: formValues.bs
-//                         }
-//                     }),
-//                 headers: {
-//                     'Content-type': 'application/json; charset=UTF-8',
-//                 },
-//             }
-//         )
-//             .then(res => res.json())
-//             .then((json) => console.log(json))
-//     }
-// }
-
         const initialState = {
             name: "",
             username: "",
@@ -169,3 +132,42 @@ const CreateUser = () => {
 ;
 
 export default CreateUser;
+
+
+// prev
+//     const postUser = async () => {
+//
+//         await fetch("https://jsonplaceholder.typicode.com/users", {
+//                 method: "POST",
+//                 body: JSON.stringify(
+//                     {
+//                         name: formValues.name,
+//                         username: formValues.username,
+//                         email: formValues.email,
+//                         address: {
+//                             street: formValues.street,
+//                             suite: formValues.suite,
+//                             city: formValues.city,
+//                             zipcode: formValues.zipcode,
+//                             geo: {
+//                                 lat: formValues.lat,
+//                                 lng: formValues.lng
+//                             }
+//                         },
+//                         phone: formValues.phone,
+//                         website: formValues.website,
+//                         company: {
+//                             name: formValues.companyName,
+//                             catchPhrase: formValues.catchPhrase,
+//                             bs: formValues.bs
+//                         }
+//                     }),
+//                 headers: {
+//                     'Content-type': 'application/json; charset=UTF-8',
+//                 },
+//             }
+//         )
+//             .then(res => res.json())
+//             .then((json) => console.log(json))
+//     }
+// }

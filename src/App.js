@@ -1,11 +1,12 @@
-import CreateUser from "./components/CreateUser/CreateUser";
-// import {CreateUser2} from "./components/CreateUser/CreateUser2";
+// import CreateUser from "./components/CreateUser/CreateUser";
+
+import UserContainer from "./components/UserContainer/UserContainer";
 
 function App() {
     return (
         <div>
-            <CreateUser/>
-            {/*<CreateUser2/>*/}
+            {/*<CreateUser/>*/}
+            <UserContainer/>
         </div>
     );
 }
