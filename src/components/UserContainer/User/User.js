@@ -1,5 +1,3 @@
-import React from 'react';
-
 const User = ({user}) => {
     const {
         id,
@@ -9,7 +7,16 @@ const User = ({user}) => {
         address: {street, suite, city, zipcode, geo: {lat, lng}},
         phone,
         website,
-        company: {name:companyName, catchPhrase, bs}
+        company: {cName, catchPhrase, bs}
+
+        // id:id,
+        // name:name,
+        // username:username,
+        // email:email,
+        // address: {street:address_street, suite:address_suite, city:address_city, zipcode:address_zipcode, geo: {lat:address_geo_lat, lng:address_geo_lng}},
+        // phone:phone,
+        // website:website,
+        // company: {name:company_name, catchPhrase:company_catchPhrase, bs:company_bs}
     } = user;
     return (
         <div>
@@ -29,7 +36,7 @@ const User = ({user}) => {
             <div>phone: {phone}</div>
             <div>website: {website}</div>
 
-            <div>company name: {companyName}</div>
+            <div>company name: {cName}</div>
             <div>catchPhrase: {catchPhrase}</div>
             <div>bs: {bs}</div>
             <hr/>
