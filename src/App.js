@@ -1,12 +1,9 @@
-// import CreateUser from "./components/CreateUser/CreateUser";
-
-import UserContainer from "./components/UserContainer/UserContainer";
+import CommentsContainer from "./components/CommentContainer/CommentsContainer";
 
 function App() {
     return (
         <div>
-            {/*<CreateUser/>*/}
-            <UserContainer/>
+            <CommentsContainer/>
         </div>
     );
 }
