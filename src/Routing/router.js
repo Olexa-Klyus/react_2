@@ -1,7 +1,7 @@
 import {createBrowserRouter, Outlet} from "react-router-dom";
+import {AppRoutes} from "./AppRoutes";
 
 import Navbar from "../components/Navbar/Navbar";
-import {AppRoutes} from "./AppRoutes";
 import {Todos} from "../components/Todos/Todos";
 import {Albums} from "../components/Albums/Albums";
 import Comments from "../components/Comments/Comments";
@@ -14,19 +14,10 @@ const AppLayout = () => (
     </>
 )
 
-
-// const UserId = () => {
-//     const {userId} = useParams()  // це хук, який виділяє параметри, які користувач(ка) ввів у браузері, тобто все післяостаннього слеша
-//     fetch(`1vvdfdffd/${userId}`)  // щоб не робити окремий шлях для кожного id
-//     return (
-//         <div>user id</div>
-//     )
-// }
-
 export const router = createBrowserRouter([
     {
         element: <AppLayout/>,
-        errorElement: <>Oooooppppsss</>,
+        errorElement: <div>Oooooppppsss</div>,
         children: [
             {
                 path: AppRoutes.MAIN,
@@ -42,23 +33,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: AppRoutes.COMMENTS,
-                element: <Comments/>
-            },
-            {
-                path: AppRoutes.POSTS,
-                element: <Post/>
+                element: [<Outlet/>, <Comments/>],
+                children:[
+                    {
+                        path: AppRoutes.POSTS,
+                        // element: <Post/>,
+                        children:[
+                            {
+                                path: AppRoutes.POST_ID,
+                                element: <Post/>,
+                                errorElement: <div>"Sorry, such post doesn't exist. Try again"<hr/></div>
+                            },
+                        ]
+                    },
+                ]
             },
 
-            // {
-            //     path: AppRoutes.USERS,
-            //     element: <Users/>,
-            //     children: [
-            //         {
-            //             path: AppRoutes.USERS_INFO,
-            //             element: <div>users info</div>,
-            //         },
-            //     ]
-            // },
         ]
     },
 ]);

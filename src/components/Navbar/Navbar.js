@@ -31,7 +31,9 @@ const Navbar = () => {
             justifyContent: "space-evenly",
             backgroundColor: "blueviolet",
             color: "white",
-            height: 40
+            height: 60,
+            fontFamily: "Roboto",
+            fontSize: 20,
         }}>
 
             {links.map((link) => (
