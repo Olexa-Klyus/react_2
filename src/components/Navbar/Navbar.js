@@ -37,7 +37,7 @@ const Navbar = () => {
         }}>
 
             {links.map((link) => (
-                <Link to={link.path} style={{color: link.path === pathname ? "white" : "lime"}}>
+                <Link to={link.path} key={link.label} style={{color: link.path === pathname ? "white" : "lime"}}>
                     {link.label}
                 </Link>
             ))}

@@ -1,18 +1,11 @@
-import {createBrowserRouter, Outlet} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import {AppRoutes} from "./AppRoutes";
 
-import Navbar from "../components/Navbar/Navbar";
 import {Todos} from "../components/Todos/Todos";
 import {Albums} from "../components/Albums/Albums";
 import Comments from "../components/Comments/Comments";
 import Post from "../components/Post/Post";
-
-const AppLayout = () => (
-    <>
-        <Navbar/>
-        <Outlet/>
-    </>
-)
+import {AppLayout} from "../components/AppLayout/AppLayout";
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: AppRoutes.COMMENTS,
-                element: [<Outlet/>, <Comments/>],
+                element: <Comments/>,
                 children:[
                     {
                         path: AppRoutes.POSTS,
