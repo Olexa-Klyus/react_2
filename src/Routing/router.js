@@ -2,10 +2,9 @@ import {createBrowserRouter, Outlet} from "react-router-dom";
 import {AppRoutes} from "./AppRoutes";
 
 import Navbar from "../components/Navbar/Navbar";
-import {Todos} from "../components/Todos/Todos";
-import {Albums} from "../components/Albums/Albums";
+import {Cars} from "../components/Cars/Cars";
+import Posts from "../components/Posts/Posts";
 import Comments from "../components/Comments/Comments";
-import Post from "../components/Post/Post";
 
 const AppLayout = () => (
     <>
@@ -24,31 +23,17 @@ export const router = createBrowserRouter([
                 element: <div>Welcome!</div>,
             },
             {
-                path: AppRoutes.TODOS,
-                element: <Todos/>,
+                path: AppRoutes.CARS,
+                element: <Cars/>
             },
             {
-                path: AppRoutes.ALBUMS,
-                element: <Albums/>
+                path: AppRoutes.POSTS,
+                element: <Posts/>
             },
             {
                 path: AppRoutes.COMMENTS,
-                element: [<Outlet/>, <Comments/>],
-                children:[
-                    {
-                        path: AppRoutes.POSTS,
-                        // element: <Post/>,
-                        children:[
-                            {
-                                path: AppRoutes.POST_ID,
-                                element: <Post/>,
-                                errorElement: <div>"Sorry, such post doesn't exist. Try again"<hr/></div>
-                            },
-                        ]
-                    },
-                ]
+                element: <Comments/>
             },
-
         ]
     },
 ]);

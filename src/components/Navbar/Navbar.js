@@ -9,12 +9,12 @@ const Navbar = () => {
             label: "Main"
         },
         {
-            path: AppRoutes.TODOS,
-            label: "Todos"
+            path: AppRoutes.CARS,
+            label: "Cars"
         },
         {
-            path: AppRoutes.ALBUMS,
-            label: "Albums"
+            path: AppRoutes.POSTS,
+            label: "Posts"
         },
         {
             path: AppRoutes.COMMENTS,
@@ -31,13 +31,13 @@ const Navbar = () => {
             justifyContent: "space-evenly",
             backgroundColor: "blueviolet",
             color: "white",
-            height: 60,
+            height: 70,
             fontFamily: "Roboto",
-            fontSize: 20,
+            fontSize: 25,
         }}>
 
             {links.map((link) => (
-                <Link to={link.path} style={{color: link.path === pathname ? "white" : "lime"}}>
+                <Link to={link.path} key={link.path} style={{color: link.path === pathname ? "white" : "lime"}}>
                     {link.label}
                 </Link>
             ))}
