@@ -1,22 +1,18 @@
-import {AppRoutes} from "../../../Routing/AppRoutes";
-import {Link} from "react-router-dom";
+import React, {Component} from 'react';
 
-const Comment = ({comment}) => {
-    const {postId, name, email, body} = comment;
-    return (
-        <div>
+class Comment extends Component {
+    render() {
+        const {id, name, body} = this.props.comment;
+
+        return (
             <div>
-                <Link to={`${AppRoutes.POSTS}/${postId}`}>
-                postId: {postId}
-                </Link>
+                <div><b>id: </b>{id}</div>
+                <div><b>name:</b> {name}</div>
+                <div><b>body:</b> {body}</div>
+                <br/>
             </div>
-            <div>id: {comment.id}</div>
-            <div>name: {name}</div>
-            <div>email: {email}</div>
-            <div>body: {body}</div>
-            <div>***</div>
-        </div>
-    );
-};
+        );
+    }
+}
 
-export default Comment;
+export {Comment};

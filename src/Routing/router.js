@@ -1,38 +1,33 @@
-import {createBrowserRouter, Outlet} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
+
 import {AppRoutes} from "./AppRoutes";
+import CarsPage from "../pages/CarsPage";
+import {PostsPage} from "../pages/PostsPage";
+import {CommentsPage} from "../pages/CommentsPage";
+import {MainLayout} from "../layouts/MainLayout";
 
-import Navbar from "../components/Navbar/Navbar";
-import {Cars} from "../components/Cars/Cars";
-import Posts from "../components/Posts/Posts";
-import Comments from "../components/Comments/Comments";
-
-const AppLayout = () => (
-    <>
-        <Navbar/>
-        <Outlet/>
-    </>
-)
 
 export const router = createBrowserRouter([
     {
-        element: <AppLayout/>,
+        path: AppRoutes.MAIN,
+        element: <MainLayout/>,
         errorElement: <div>Oooooppppsss</div>,
         children: [
             {
-                path: AppRoutes.MAIN,
-                element: <div>Welcome!</div>,
+                index: true,
+                element: <Navigate to={"cars"}/>
             },
             {
                 path: AppRoutes.CARS,
-                element: <Cars/>
+                element: <CarsPage/>
             },
             {
                 path: AppRoutes.POSTS,
-                element: <Posts/>
+                element: <PostsPage/>
             },
             {
                 path: AppRoutes.COMMENTS,
-                element: <Comments/>
+                element: <CommentsPage/>
             },
         ]
     },

@@ -1,13 +1,10 @@
 import {Link, useLocation} from "react-router-dom";
+
 import {AppRoutes} from "../../Routing/AppRoutes";
 
 
 const Navbar = () => {
     const links = [
-        {
-            path: AppRoutes.MAIN,
-            label: "Main"
-        },
         {
             path: AppRoutes.CARS,
             label: "Cars"

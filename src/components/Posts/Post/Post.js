@@ -1,33 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import React, {Component} from 'react';
 
-const Post = () => {
-    const [post, setPost] = useState({});
+class Post extends Component {
+    render() {
+        const {id, title, body} = this.props.post;
+        return (
+            <div>
+                <div><b>id: </b>{id}</div>
+                <div><b>title: </b>{title}</div>
+                <div><b>body: </b>{body}</div>
+                <br/>
+            </div>
+        );
+    }
+}
 
-    const {postId} = useParams();
-    // console.log(postId)
-
-    useEffect(() => {
-        if (postId < 1 || postId > 100) {
-            throw Error
-        }
-        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-            .then(value => value.json())
-            .then(post => setPost(post))
-            // .catch((e) => (<div>"Sorry, such post doesn't exist"</div>))
-
-    }, [postId])
-
-
-    return (
-        <div> Post
-            <div>userId: {post.userId}</div>
-            <div>post id: {postId}</div>
-            <div>title: {post.title}</div>
-            <div>body: {post.body}</div>
-            <hr/>
-        </div>
-    );
-};
-
-export default Post;
+export {Post};

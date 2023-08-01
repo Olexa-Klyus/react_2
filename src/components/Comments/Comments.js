@@ -1,19 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import Comment from "./Comment/Comment";
+import React, {Component} from 'react';
 
-const Comments = () => {
-    const [comments, setComments] = useState([]);
+import {commentService} from "../../services/commentService";
+import {Comment} from "./Comment/Comment";
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/comments")
-            .then(value => value.json())
-            .then(comments => setComments(comments))
-    }, [comments])
+class Comments extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: []
+        }
+    }
+    componentDidMount() {
+        commentService.getAll().then(({data})=>this.setState({comments:data}))
+    }
 
-    return (
-        <div>
-            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
-        </div>)
+    render() {
+        return (
+            <div>
+                {this.state.comments.map(comment=><Comment key={comment.id} comment={comment}/>)}
+            </div>
+        );
+    }
 }
 
-export default Comments;
+export {Comments};

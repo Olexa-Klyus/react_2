@@ -1,26 +1,18 @@
-import React from 'react';
+import {Component} from 'react';
 
-export class Car extends React.Component {
-    constructor(car) {
-        super(car);
-        this.state = {
-            id: car.id,
-            brand: car.brand,
-            price: car.price,
-            year: car.year
-        }
-    }
+export class Car extends Component {
 
     render() {
+        const {id, brand, price, year} = this.props.car;
+
         return (
             <div>
-                <div>id: {this.id}</div>
-                <div>brand: {this.brand}</div>
-                <div>price: {this.price}</div>
-                <div>year: {this.year}</div>
+                <div>id: {id}</div>
+                <div>brand: {brand}</div>
+                <div>price: {price}</div>
+                <div>year: {year}</div>
+                <br/>
             </div>
         )
     }
 }
-
-export default Car;
