@@ -1,5 +1,10 @@
-// import {useEffect, useState} from "react";
+import {useState} from "react";
 
-export function useToggle(defaultValue) {
-    return !defaultValue
+export const useToggle = (defaultValue) => {
+    const [value, setValue] = useState(defaultValue);
+
+    const changeStatus = () => {
+        setValue(prev => !prev)
+    }
+    return {value, changeStatus}
 }

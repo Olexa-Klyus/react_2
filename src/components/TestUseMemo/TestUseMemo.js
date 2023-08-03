@@ -1,30 +1,20 @@
-import React, {memo, useCallback, useMemo} from 'react';
+import React, {useMemo} from 'react';
 
-import {useToggle} from "../../hooks/useToggle";
 import {useFetch} from "../../hooks/useFetch";
 import Users from "../ToBeFetched/Users";
 import {useArray} from "../../hooks/useArray";
 
-export const TestUseMemo = ({data}) => {
-    const {number} = data;
-
+// 1
+export const TestUseMemo = ({number}) => {
     const someFunction = (number) => {
-        for (let i = 1; i < 1000000; i++) {
-            number += 1;
+        let res = 0;
+        for (let i = 1; i < 1000000000; i++) {
+            res += number;
         }
-        return number;
+        return res;
     }
 
-    // 1,2
-    const someRes = useMemo(() => someFunction(number), [data])
-    const someResFunc = memo(useCallback(() => someFunction(number), [data]))
-
-    // 3
-    let compStatus = (someRes % 2) ? true : false;
-
-    compStatus = useToggle(compStatus);
-    compStatus = useToggle(compStatus);
-    console.log(compStatus)
+    const someRes = useMemo(() => someFunction(number), [number]);
 
     // 4
     const endpoint_users = "users";
@@ -49,10 +39,8 @@ export const TestUseMemo = ({data}) => {
             <br/>
             1. TestUseMemo -- useMemo -- result: <b>{someRes}</b>
             <br/><br/>
-            2. TestUseMemo -- useCallback -- result: <b>{typeof someResFunc}</b>
-            <br/><br/>
-            3. component status: <b>{compStatus.toString()}</b>
-            <br/><br/>
+            <button onClick={() => console.log("click")}>log click</button>
+            <br/><hr/>
             4. Users: {users.map(user => <Users key={user.id} user={user}/>)}
         </div>
     );
