@@ -5,6 +5,7 @@ import {TestUseMemo} from "./components/TestUseMemo/TestUseMemo";
 import Navbar from "./components/Navbar/Navbar";
 import {TestUseCallback} from "./components/TestUseCallback/TestUseCallback";
 import TestUseToggle from "./components/TestUseToggle/TestUseToggle";
+import TestUseFetch from "./components/TestUseFetch/TestUseFetch";
 
 function App() {
     const [number, setNumber] = useState(1);
@@ -18,6 +19,7 @@ function App() {
             <TestUseMemo number={number}/>
             <TestUseCallback number={number}/>
             <TestUseToggle number={number}/>
+            <TestUseFetch/>
         </div>
     );
 }
