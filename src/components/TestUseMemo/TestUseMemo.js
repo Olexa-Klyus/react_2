@@ -12,11 +12,6 @@ export const TestUseMemo = ({number}) => {
 
     const someRes = useMemo(() => someFunction(number), [number]);
 
-    // // 5
-    // users = useArray(users, "+", {name: "Olena", username: "Olena", email: "Olena@gmail.com"})
-    // users = useArray(users, "-", 3)
-    // users = useArray(users, "-", 1)
-
 
     return (
         <div>

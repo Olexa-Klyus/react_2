@@ -1,20 +1,18 @@
-// import {useState} from "react";
+import {useState} from "react";
 
-export function useArray(defaultValue, sign, item) {
+export function useArray(defaultValue) {
+    const [data, setData] = useState(Array.isArray(defaultValue) ? defaultValue : []);
 
     const add = (item) => {
-        defaultValue.push(item)
-        return defaultValue;
+        setData(prev => [...prev, item])
     }
     const remove = (id) => {
-        defaultValue = defaultValue.filter((item) => item.id !== id);
+        setData(prev => {
+            const index = prev.findIndex(item => item.id = id);
+            prev.splice(index, 1);
+            return [...prev];
+        })
     }
-    if (sign === "+") {
-        add(item);
-    }
-    if (sign === "-") {
-        remove(item);
-    } else {}
 
-    return defaultValue;
+    return {data, add, remove};
 }
