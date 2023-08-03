@@ -1,10 +1,19 @@
 import {createBrowserRouter} from "react-router-dom";
 
+import {TestUseMemo} from "../components/TestUseMemo/TestUseMemo";
+import App from "../App";
+
 export const router = createBrowserRouter([
-    // стандартна структура:
     {
         path: "/",
-        element: <div>Hello world!</div>,
+        element: <App/>,
+        children:[
+            {
+                path: "/testmemo",
+                element: <TestUseMemo/>
+            },
+        ]
     },
-    // тепер робимо перший елемент,
+
+
 ]);
