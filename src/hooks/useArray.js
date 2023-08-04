@@ -8,7 +8,7 @@ export function useArray(defaultValue) {
     }
     const remove = (id) => {
         setData(prev => {
-            const index = prev.findIndex(item => item.id = id);
+            const index = prev.findIndex(item => item.id === id);
             prev.splice(index, 1);
             return [...prev];
         })
