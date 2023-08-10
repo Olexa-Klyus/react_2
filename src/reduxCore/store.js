@@ -1,17 +1,17 @@
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import {composeWithDevTools} from "@redux-devtools/extension";
+import thunk from 'redux-thunk';
 
-import {usersReducer} from "./reducers/usersReducer";
+import {carsReducer} from "./reducers/carsReducer";
 
 const rootReducer = combineReducers({
-    users:usersReducer,  // одна полиця шафи
-    // comments: commentsReducer,
-    // posts: postsReducer
+    cars:carsReducer,
 });
 
 const composeEnhancers = composeWithDevTools({
     trace:true,
     traceLimit: 25
-})  // відстежує всі дії з redux, з якої стрічки коду ми змінювали redux (тобто якийсь state, полицю)
+})
 
-export const store = createStore(rootReducer, composeEnhancers());
+export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+

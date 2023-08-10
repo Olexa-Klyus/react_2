@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 
-import Lesson9 from "../components/Lesson9/Lesson9";
+import CarsContainer from "../components/Lesson9/CarsContainer";
 
 export const router = createBrowserRouter([
     {
@@ -8,8 +8,8 @@ export const router = createBrowserRouter([
         element: <div>Hello world!</div>,
     },
     {
-        path: "/lesson9",
-        element: <Lesson9/>,
+        path: "/cars",
+        element: <CarsContainer/>,
     },
 
 ]);
