@@ -1,26 +1,14 @@
-import axios from "axios";
+import {apiService} from "./apiService";
 
-import {Endpoints} from "./endpoints";
+import {urls} from "../constants";
 
+const carService = {
+    getAll:()=> apiService.get(urls.cars.base),
+    create:(data)=>apiService.post(urls.cars.base, data),
+    updateById: (id, data) => apiService.put(urls.cars.byId(id),data),
+    deleteById:(id) => apiService.delete(urls.cars.byId(id))
+};
 
-const {REACT_APP_BASEURL} = process.env
-const instance = axios.create({
-    baseURL: REACT_APP_BASEURL
-});
-const baseApiUrl = "http://owu.linkpc.net/carsAPI/v1";
-
-export const carService = {
-    get: () => {
-        return instance.get(baseApiUrl + Endpoints.cars)
-        // .then(res => dispatch(carActions.setCars(res.data)));
-    },
-    post: (newCar) => {
-        return instance.post(baseApiUrl + Endpoints.cars,
-            newCar)
-    },
-
-    // delete: (id) => {
-    //     return instance.delete(baseApiUrl + Endpoints.cars + id);
-    // },
-
+export {
+    carService
 };
