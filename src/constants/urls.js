@@ -1,11 +1,12 @@
 const baseURL = process.env.REACT_APP_API
 
-const cars = "/cars"
+const episodes = '/episode'
+const characters = '/character'
 
-const urls ={
-    cars: {
-        base:cars,
-        byId:(id) => `${cars}/${id}`
+const urls = {
+    episodes,
+    characters: {
+        byIds: (iDs) => `${characters}/${iDs}`
     }
 }
 
