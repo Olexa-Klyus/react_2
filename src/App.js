@@ -1,5 +1,5 @@
 import './App.css';
-import CarsContainer from "./components/CharactersContainer/CarsContainer";
+import CarsContainer from "./components/CarsContainer/CarsContainer";
 
 function App() {
   return (
