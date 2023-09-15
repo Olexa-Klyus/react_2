@@ -1,9 +1,14 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {carReducer} from "./slices/carsSlice";
+
+import {filmsReducer} from "./slices/filmsSlice";
+import {genresReducer} from "./slices/genresSlice";
+import {searchReducer} from "./slices/searchSlice";
 
 const store = configureStore({
     reducer: {
-        cars: carReducer
+        films: filmsReducer,
+        genres: genresReducer,
+        search: searchReducer
     }
 });
 

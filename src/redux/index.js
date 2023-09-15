@@ -1,2 +1,2 @@
-export * from "./slices/carsSlice";
+export * from "./slices/filmsSlice";
 export * from "./store";

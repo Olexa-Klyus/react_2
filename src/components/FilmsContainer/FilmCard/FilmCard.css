@@ -1,0 +1,7 @@
+.film_card {
+    display: block;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    /*height: 30vh;*/
+}
