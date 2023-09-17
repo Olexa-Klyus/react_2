@@ -4,15 +4,13 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {filmsActions} from "../../../redux";
 import {useLocation} from "react-router-dom";
-// import {useLocation} from "react-router-dom";
+import "./FilmDetails.css"
 
 
 const FilmDetails = () => {
     // const [trigger, setTrigger] = useState();
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //     const {title, overview, genres, release_date, runtime, poster_path} = useSelector(state => state.film);
-    // }, [dispatch])
+    const {title, overview, genres, release_date, runtime, poster_path} = useSelector(state => state.films.film);
 
     const location = useLocation();
     const filmId = +location.pathname.split("/").pop();
@@ -26,16 +24,20 @@ const FilmDetails = () => {
     }, [])
 
     return (
-        <div>
-            Film
-            {/*<img src={img_path + poster_path} alt={`${title} poster`}/>*/}
-            {/*{title}*/}
-            {/*{overview}*/}
-            {/*/!*<StarsRatingM/>*!/*/}
-            {/*{genres.map(genre => <a>{genre}</a>)}*/}
-            {/*release: {release_date}*/}
-            {/*runtime: {runtime}*/}
-
+        <div className="film_details_page">
+            <div className="film_img">
+                <img src={img_path + poster_path} alt={`${title} poster`}/>
+            </div>
+            <div className="film_text_info">
+                <div className="film_title">
+                {title}</div>
+                <br/>
+                <div className="film_overview">{overview}</div>
+                {/*<StarsRatingM/>*/}<br/>
+                {/*{genres.map(genre => genre.join(","))}*/}<br/>
+                release: {release_date}<br/><br/>
+                runtime: {runtime}<br/><br/>
+            </div>
         </div>
     );
 };

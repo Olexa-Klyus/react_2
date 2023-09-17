@@ -1,7 +1,9 @@
 .genre_name_title {
     font-family: Roboto, serif;
     font-size: x-large;
-    background-color: lightgray;
     height: 100px;
     width: 25%;
+    background-color: rgba(43,43,43,0.87);
+    color: white;
+    /*border: none;*/
 }

@@ -10,9 +10,9 @@ const api_key = authService.getKey()
 
 const urls = {
     films: {
-        all: films,
+        all: (page) => `${films}?page=${page}&api_key=${api_key}`,
         byId: (id) => `${film}/${id}`,
-        byPage: (pageNumber) => `${films}?page=${pageNumber}`,
+        // byPage: (pageNumber) => `${films}?page=${pageNumber}`,
     },
     genres: {
         base: genres,
@@ -20,7 +20,7 @@ const urls = {
         // byName: (name)=> `?=${name}`
     },
     search: {
-        byStr: (str) => `${search}/movie?query=${str}`
+        byStr: (str) => `${search}/movie?query=${str}&api_key=${api_key}`
     }
 }
 

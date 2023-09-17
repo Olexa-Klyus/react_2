@@ -4,8 +4,9 @@ import {searchService} from "../../services/searchService";
 
 const initialState = {
     films: [],
-    // errors: null,
-    page: 1
+    page: 1,
+    total_pages: 0,
+    total_results: 0,
 }
 
 
@@ -29,9 +30,12 @@ const searchSlice = createSlice({
             .addCase(searchThunk.fulfilled, (state, action) => {
                 state.films = action.payload.results;
                 state.page = action.payload.page;
+                state.total_pages = action.payload.total_pages;
+                state.total_results = action.payload.total_results;
+                // console.log(state.films)
             })
             // .addMatcher(isRejected(), (state, action) => {
-            //     state.errors = action.payload.errors
+            //     state.errors = action.payload
             // })
     }
 );

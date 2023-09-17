@@ -4,7 +4,7 @@ import Genres from "../../components/GenresContainer/Genres/Genres";
 
 const GenresPage = () => {
     return (
-        <div>
+        <div className="genres_page">
             <Genres/>
         </div>
     );

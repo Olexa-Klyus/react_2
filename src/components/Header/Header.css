@@ -5,17 +5,39 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: darkblue;
+    background-color: rgba(0,0,0,0.91);
+    color: white;
 }
 
 .navbar_button {
     width: fit-content;
     color: white;
-    background-color: darkblue;
+    /*background-color: darkblue;*/
     font-family: Roboto, serif;
     font-size: x-large;
+    text-decoration: none;
 }
 
 body {
     margin: 0;
 }
+
+.site_name {
+    width: 5%;
+}
+
+.all_navbar_links {
+    justify-content: space-around;
+    width: 60%;
+    display: flex;
+}
+
+.user_navbar {
+    justify-content: center;
+    align-items: center;
+}
+
+/*.theme_switcher {*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+/*}*/

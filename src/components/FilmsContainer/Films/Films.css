@@ -4,6 +4,8 @@
     width: 100vw;
     height: 100vh;
     justify-content: space-between;
+    /*margin: 1.5%;*/
     /*padding: 5px;*/
     /*overflow: hidden;*/
+    background-color: black;
 }

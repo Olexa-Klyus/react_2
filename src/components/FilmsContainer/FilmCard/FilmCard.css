@@ -1,7 +1,20 @@
 .film_card {
     display: block;
     flex-direction: column;
-    width: 30%;
+    /*width: 80%;*/
     justify-content: center;
+    align-items: center;
+    text-align: center;
     /*height: 30vh;*/
+    margin: 7%;
+}
+
+.title_card_preview {
+    font-size: x-large;
+    color: white;
+}
+
+.link_title_card_preview {
+    text-decoration: none;
+    text-underline: none;
 }
